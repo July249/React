@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 const HabitAddForm = memo((props) => {
   const inputRef = React.createRef();
