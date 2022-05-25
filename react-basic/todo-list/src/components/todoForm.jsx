@@ -37,8 +37,8 @@ const TodoForm = (props) => {
             ref={inputRef}
             className="todo-input edit"
           />
-          <button className="todo-button" onClick={handleSubmit}>
-            Add todo
+          <button onClick={handleSubmit} className="todo-button edit">
+            Update
           </button>
         </>
       ) : (
@@ -51,7 +51,7 @@ const TodoForm = (props) => {
             className="todo-input"
             ref={inputRef}
           />
-          <button onClick={handleSubmit} className="todo-button">
+          <button className="todo-button" onClick={handleSubmit}>
             Add todo
           </button>
         </>
