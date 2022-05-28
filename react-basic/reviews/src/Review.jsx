@@ -24,8 +24,8 @@ const Review = () => {
         <button className="next-btn">
           <FaChevronRight />
         </button>
-        <button className="random-btn">suprise me</button>
       </div>
+      <button className="random-btn">suprise me</button>
     </article>
   );
 };
