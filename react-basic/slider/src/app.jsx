@@ -32,7 +32,7 @@ function App() {
           <FiChevronLeft />
         </button>
         <button className="next">
-          <FiChevronsRight />
+          <FiChevronRight />
         </button>
       </div>
     </section>
