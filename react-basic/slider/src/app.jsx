@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FiChevronRight, FiChevronLeft, FiChevronsRight } from 'react-icons/fi';
+import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import { FaQuoteRight } from 'react-icons/fa';
 import data from './data';
 function App() {
@@ -16,6 +16,14 @@ function App() {
     }
   }, [index, people]);
 
+  // Automatically slider switching
+  useEffect(() => {
+    let autoSlider = setInterval(() => {
+      setIndex(index + 1);
+    }, 3000);
+    return () => clearInterval(autoSlider);
+  }, [index]);
+
   return (
     <section className="section">
       <div className="title">
@@ -26,12 +34,12 @@ function App() {
       <div className="section-center">
         {people.map((person, personIndex) => {
           const { id, image, name, title, quote } = person;
-          // more stuff coming up
+
+          // arrange article's position
           let position = 'nextSlide';
           if (personIndex === index) {
             position = 'activeSlide';
           }
-
           if (
             personIndex === index - 1 ||
             (index === 0 && personIndex === people.length - 1)
